@@ -1,8 +1,7 @@
-'use strict';
 
-/**
- * navbar toggle
- */
+// const { response } = require("express");
+require ('cors');
+
 
 const overlay = document.querySelector("[data-overlay]");
 const navbar = document.querySelector("[data-navbar]");
@@ -23,11 +22,6 @@ for (let i = 0; i < navbarLinks.length; i++) {
 }
 
 
-
-/**
- * header active on scroll
- */
-
 const header = document.querySelector("[data-header]");
 
 window.addEventListener("scroll", function () {
@@ -36,36 +30,54 @@ window.addEventListener("scroll", function () {
 });
 
 
-async function searchCars() {
-  const carSearchForm = document.getElementById('carSearchForm');
-  const carModel = carSearchForm.elements['car-model'].value;
-  const year = carSearchForm.elements['year'].value;
+document.getElementById('register').addEventListener('submit', 
+async (event) => { event.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value; 
+  const password = document.getElementById('password').value;
+  
+  const userData = { name, email, password};
 
   try {
-      const response = await fetch(`YOUR_API_ENDPOINT?carModel=${carModel}&year=${year}`);
-      const data = await response.json();
+    const response = await fetch('http://localhost:3000/signup#', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userData),
 
-      const searchResultsDiv = document.getElementById('searchResults');
-      searchResultsDiv.innerHTML = ''; // Clear previous results
+    }).then(response => response.json())
+      
 
-      if (data.length > 0) {
-          data.forEach(car => {
-              const carCard = document.createElement('div');
-              carCard.classList.add('search-result-card');
-
-              // Customize the card content based on your data structure
-              carCard.innerHTML = `
-                  <h3>${car.model}</h3>
-                  <p>Year: ${car.year}</p>
-                  <!-- Add more details as needed -->
-              `;
-
-              searchResultsDiv.appendChild(carCard);
-          });
-      } else {
-          searchResultsDiv.innerHTML = '<p>No results found.</p>';
-      }
+    if (response.ok) {
+      console.log('Registration successful')
+    } else {
+      console.error('Registration failed:', response.status);
+    }
   } catch (error) {
-      console.error('Error fetching data:', error);
-  }
-}
+    console.error('Error during registration', error);
+  };
+  });
+
+
+
+const loginForm = document.querySelector('#login');
+
+loginForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  const email = document.querySelector('#email').value;
+  const password = document.querySelector('#password').value;
+
+  const response = await fetch('http://localhost:3000/signup', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email, password }),
+  });
+
+
+});
+
