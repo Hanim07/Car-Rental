@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Vehicle CRUD</h1>
+    <h2>Add New Vehicle</h2>
+
+    <form class="form-container" id="form_crud">
+        <label for="id">Id</label>
+        <input type="text" id="id" value="">
+        <div class="form-column">
+            <div class="form-group">
+                <label for="year">Year</label>
+                <input type="text" id="year" value="">
+            </div>
+
+            <div class="form-group">
+                <label for="model">Model</label>
+                <input type="text" id="model" value="">
+            </div>
+
+        </div>
+
+        <div class="form-column">
+            <div class="form-group">
+                <label for="engine">Engine</label>
+                <input type="text" id="engine" value="">
+            </div>
+
+            <div class="form-group">
+                <label for="doors">People</label>
+                <input type="text" id="doors" value="">
+            </div>
+
+            <div class="form-group">
+                <label for="transmission">Transmission</label>
+                <input type="text" id="transmission" value="">
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <button type="submit" name="create" id="create"> Add </button>
+            <button type="submit" name="update" id="update"> Update </button>
+            <button type="submit" name="delete" id="delete"> Remove </button>
+        </div>
+    </form>
+    
+
+
+    <script src="index.js"></script>
+
+
+
+</body>
+</html>

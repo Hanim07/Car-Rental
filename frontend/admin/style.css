@@ -1,0 +1,111 @@
+h1, h2 {
+    text-align: center;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    transform: scale(0.9);
+    transform-origin: top;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+label {
+    display: block;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#create, #update, #delete {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;   
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=checkbox] {
+    width: 30px;
+    height: 30px;
+}
+
+button {
+    display: block;
+    margin: 0 auto; 
+    width: 350px;
+    background-color: #007bff;
+    color: white;
+    padding: 14px 20px;
+    margin-top: 10px; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#create:hover, #update:hover, #delete:hover, button:hover {
+    background-color: #0056b3;
+}
+
+
+.check_label {
+    vertical-align: middle;
+    margin-bottom: 15px;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.form-column {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    flex-basis: calc(50% - 10px);
+}
+
+table {
+    text-align: center;
+}
+
+strong {
+    padding-inline: 30px;
+}
+
+.item {
+    padding-inline: 30px;
+}
