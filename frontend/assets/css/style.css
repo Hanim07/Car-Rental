@@ -1,18 +1,4 @@
-/*-----------------------------------*\
-  #style.css
-\*-----------------------------------*/
 
-/**
- * copyright 2022 codewithsadee
- */
-
-
-
-
-
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
 
 :root {
 
@@ -1176,15 +1162,6 @@
     .get-start-list { grid-template-columns: repeat(4, 1fr); }
   
   
-  
-    /**
-     * BLOG
-     */
-  
-    .blog .has-scrollbar > li {
-      max-width: 340px;
-      scroll-snap-align: center;
-    }
   
   
   
